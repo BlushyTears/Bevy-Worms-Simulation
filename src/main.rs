@@ -102,7 +102,6 @@ fn setup_physics(mut commands: Commands) {
     .insert(GravityScale(0.0))
     .insert(ActiveEvents::COLLISION_EVENTS);
 
-
     // Tile
     commands.spawn()
     .insert(TileMap)
@@ -148,11 +147,9 @@ fn modify_body_translation(
             }   
         }
     }
-
-
+    
     for mut position in worm_query.iter_mut() {
         position.translation.y += direction_y;
         position.translation.x += direction_x;
     }
-
 }
